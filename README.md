@@ -1,4 +1,4 @@
-# Note Making 
+# Note Making Application
 
 ##### User Registration/Signup:
 * api/v1/auth/registration
@@ -11,3 +11,11 @@
 
 ##### Teacher Login: 
 * api/v1/auth/login/teacher
+
+##### Get All Notes: (only teacher can access)
+* api/v1/notes
+
+##### Get Single Notes: (only owner (student) can view/edit/delete their own note )
+* api/v1/notes/:id
+
+**Note: Teacher can view/edit/delete any student's notes **
