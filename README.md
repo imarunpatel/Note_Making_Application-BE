@@ -1,6 +1,6 @@
 # Note Making Application
 
-## To run application use command:
+##### > To run application use command:
 `npm run dev`
 
 ##### User Registration/Signup:
