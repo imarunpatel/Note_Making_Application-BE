@@ -1,5 +1,8 @@
 # Note Making Application
 
+## To run application use command:
+`npm run dev`
+
 ##### User Registration/Signup:
 * api/v1/auth/registration
 
@@ -18,4 +21,4 @@
 ##### Get Single Notes: (only owner (student) can view/edit/delete their own note )
 * api/v1/notes/:id
 
-**Note: Teacher can view/edit/delete any student's notes **
+#### **Note: Teacher can view/edit/delete any student's notes **
