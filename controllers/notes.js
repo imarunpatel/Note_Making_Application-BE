@@ -17,6 +17,14 @@ exports.getNote = asyncHandler(async (req, res, next) => {
                 new ErrorResponse(`Blog not found with the id of ${req.params.id}`)
             );
         };
+        console.log('user', req.user)
+
+        // Make sure student is Note owner
+        if(note.student.toString() !== req.user.id && req.user.role !== 'teacher') {
+            return next(
+                new ErrorResponse(`Student ${req.params.id} is not authorized to access this Note`, 401)
+            )
+        } 
     
         res.status(200).json({ success: true, data: note });
 })

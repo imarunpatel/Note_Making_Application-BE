@@ -9,7 +9,7 @@ router
 
 router
     .route('/:id')
-    .get(getNote)
+    .get(protect, getNote)
     .put(protect, authorize('student', 'teacher'), updateNote)
     .delete(protect, authorize('student', 'teacher'), deleteNote);
 
