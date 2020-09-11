@@ -13,7 +13,7 @@ const NotesSchema = new mongoose.Schema({
     text: {
         type: String,
         required: [true, 'Please add text'],
-        minlength: [150, 'Notes must be less than 150 words'],
+        minlength: [150, 'Notes must not be less than 150 words'],
         maxlength: [200, 'Notes can not be more than 200 words'],
     },
     createdAt: {

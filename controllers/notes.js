@@ -3,7 +3,7 @@ const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middleware/async');
 
 exports.getNotes = asyncHandler(async (req, res, next) => {
-    const blogs = await Notes.find();
+    const blogs = await Notes.find().populate('student');
     res
         .status(200)
         .json({ success: true, length: blogs.length, data: blogs });
@@ -40,7 +40,7 @@ exports.createNote = asyncHandler(async (req, res, next) => {
 	if(alreadySubmitted) {
 		return next(
 			new ErrorResponse(
-				`The student with ID ${req.user.id} has already submitted the notes`, 
+				`Hello ${req.user.name} you have already submitted the notes`, 
 				400
 			));
 	}
@@ -93,5 +93,5 @@ exports.deleteNote = asyncHandler(async (req, res, next) => {
     } 
 
     note.remove();
-    res.status(400).json({ status: true, data: {} });
+    res.status(200).json({ status: true, data: {}, msg: 'Successfully Deleted !' });
 });
