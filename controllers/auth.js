@@ -102,7 +102,7 @@ exports.loginTeacher = asyncHandler(async (req, res, next) => {
 
 
 exports.getMe = asyncHandler(async (req, res, next) => {
-    const user = await User.findById(req.user.id);
+    const user = await User.findById(req.user.id) || await Teacher.findById(req.user.id);
 
     res.status(200).json({ 
         success: true,
